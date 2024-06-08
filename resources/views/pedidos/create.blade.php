@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                 <label for="servico_id">Servico</label>
-                <select class="form-control" name="servico_id" required>
+                <select class="form-control" name="servico_id">
                     <option value="">Selecione um servico</option>
                     @foreach($servicos as $servico)
                         <option value="{{ $servico->id }}">{{ $servico->nome_servico}}</option>

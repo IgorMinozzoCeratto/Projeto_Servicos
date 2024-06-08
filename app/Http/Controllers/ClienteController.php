@@ -25,9 +25,10 @@ class ClienteController extends Controller
      */
     public function create()
     {
+        $servicos = Servico::all();
         $enderecos = Endereco::all();
         $pedidos = Pedido::all();
-        return view('clientes.create', compact('enderecos', 'pedidos'));
+        return view('clientes.create', compact('enderecos', 'pedidos', 'servicos'));
     }
 
     /**
@@ -40,11 +41,11 @@ class ClienteController extends Controller
             'cpf' => $request->input('cpf'),
             'telefone' => $request->input('telefone'),
             'sexo' => $request->input('sexo'),
-            'endereco_id' => 'required|exists:enderecos,id',
-            'pedido_id' => 'required|exists:pedidos,id'
+            'endereco_id' => $request->input('enderecos,id'),
+            'servico_id' => $request->input('servico_id')
         ]);
 
-        Cliente::create($request->all());
+        $cliente->save();
 
         return redirect()->route('clientes.index'); 
     }

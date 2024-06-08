@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                 <label for="endereco_id">Pedido</label>
-                <select class="form-control" name="pedido_id" required>
+                <select class="form-control" name="pedido_id" >
                     <option value="">Selecione um pedido</option>
                     @foreach($pedidos as $pedido)
                         <option value="{{ $pedido->id }}">{{ $pedido->id }}</option>

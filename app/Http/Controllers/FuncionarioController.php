@@ -23,9 +23,10 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
+        $servicos = Servico::all();
         $enderecos = Endereco::all();
         $pedidos = Pedido::all();
-        return view('funcionarios.create', compact('enderecos', 'pedidos'));
+        return view('funcionarios.create', compact('enderecos', 'pedidos', 'servicos'));
     }
 
     /**
@@ -38,8 +39,8 @@ class FuncionarioController extends Controller
             'cpf' => $request->input('cpf'),
             'telefone' => $request->input('telefone'),
             'sexo' => $request->input('sexo'),
-            'endereco_id' => 'required|exists:enderecos,id',
-            'pedido_id' => 'required|exists:pedidos,id'
+            'endereco_id' => $request->input('enderecos,id'),
+            'servico_id' => $request->input('servico_id')
         ]);
 
         $funcionario->save();

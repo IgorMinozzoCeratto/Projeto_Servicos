@@ -36,10 +36,10 @@ class PedidoController extends Controller
             'previsao_entrega' => $request->input('previsao_entrega'),
             'preco_venda' => $request->input('preco_venda'),
             'observacao' => $request->input('observacao'),
-            'servico_id' => 'required|exists:servicos,id'
+            'servico_id' => $request->input('servicos_id')
         ]);
 
-        Pedido::create($request->all());
+        $pedido->save();
 
         return redirect()->route('pedidos.index'); 
     }
