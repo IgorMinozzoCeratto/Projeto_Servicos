@@ -1,16 +1,13 @@
 <x-app-layout>
+<link rel="stylesheet" href="{{ asset('css/list.css') }}">
+
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Lista Funcionario') }}
         </h2>
     </x-slot>
     <div class="container">
-        <form action="{{ route('funcionarios.index') }}" method="GET" class="search-form">
-            <div class="search-container">
-                <input type="text" name="search" placeholder="Pesquisar Funcionarios..." value="{{ request()->query('search') }}" class="search-input">
-                <button type="submit" class="search-button">Pesquisar</button>
-            </div>
-        </form>
+        
         <a href="{{ route('funcionarios.create') }}" class="btn btn-primary">Novo Funcionario</a>
         <table class="table">
             <thead>

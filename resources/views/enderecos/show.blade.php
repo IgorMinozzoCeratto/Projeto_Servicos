@@ -4,6 +4,8 @@
             {{ __('Enderecos') }}
         </h2>
     </x-slot>
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+
     <section class="author-details">
       <div class="author-content">
         <div class="author-meta">
@@ -31,6 +33,6 @@
           <span class="author-info">{{ $endereco->cep }}</span>
         </div>
       </div>
-      <a href="{{ route('endereco.index') }}" class="btn-return">Voltar</a>
+      <a href="{{ route('enderecos.index') }}" class="btn-return">Voltar</a>
     </section>
   </x-app-layout>

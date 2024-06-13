@@ -22,7 +22,7 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        $servicos = Servico::all();
+        $servicos = \App\Models\Servico::all();
         return view('pedidos.create', compact('servicos'));
     }
 
@@ -31,12 +31,14 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $pedido = new Pedido([
             'valor_total' => $request->input('valor_total'),
             'previsao_entrega' => $request->input('previsao_entrega'),
             'preco_venda' => $request->input('preco_venda'),
             'observacao' => $request->input('observacao'),
-            'servico_id' => $request->input('servicos_id')
+            'servico_id' => $request->input('servicos,id'),
         ]);
 
         $pedido->save();

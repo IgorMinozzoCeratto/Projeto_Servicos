@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('previsao_entrega');
             $table->float('preco_venda');
             $table->string('observacao');
-            $table->unsignedBigInteger('servicos_id');
+            $table->unsignedBigInteger('servicos_id')->nullable();
             $table->timestamps();
 
             $table->foreign('servicos_id')->references('id')->on('servicos');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Funcionario;
 use App\Models\Endereco;
 use App\Models\Pedido;
+use App\Models\Servico;
 
 class FuncionarioController extends Controller
 {
@@ -23,9 +24,9 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        $servicos = Servico::all();
-        $enderecos = Endereco::all();
-        $pedidos = Pedido::all();
+        $servicos = \App\Models\Servico::all();
+        $enderecos = \App\Models\Endereco::all();
+        $pedidos = \App\Models\Pedido::all();
         return view('funcionarios.create', compact('enderecos', 'pedidos', 'servicos'));
     }
 
@@ -75,10 +76,7 @@ class FuncionarioController extends Controller
     public function update(Request $request, string $id)
     {
         $funcionario = Funcionario::findOrFail($id);
-        $funcionario->nome = $request->input('nome');
-        $funcionario->cpf = $request->input('cpf');
-        $funcionario->telefone = $request->input('telefone');
-        $funcionario->sexo = $request->input('sexo');
+        $funcionario->update($request->all());
         return view('funcionarios.index');
     }
 

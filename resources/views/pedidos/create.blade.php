@@ -1,9 +1,10 @@
 <x-app-layout>
     <head>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>Novo Pedido</title>
     </head>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Cadastrar Pedidos') }}
         </h2>
     </x-slot>

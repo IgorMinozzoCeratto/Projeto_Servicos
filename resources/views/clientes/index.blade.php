@@ -1,16 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
+     <link rel="stylesheet" href="{{ asset('css/list.css') }}">
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Lista Clientes') }}
         </h2>
     </x-slot>
     <div class="container">
-        <form action="{{ route('clientes.index') }}" method="GET" class="search-form">
-            <div class="search-container">
-                <input type="text" name="search" placeholder="Pesquisar Clientes..." value="{{ request()->query('search') }}" class="search-input">
-                <button type="submit" class="search-button">Pesquisar</button>
-            </div>
-        </form>
+        
         <a href="{{ route('clientes.create') }}" class="btn btn-primary">Novo Cliente</a>
         <table class="table">
             <thead>
@@ -25,8 +21,8 @@
             <tbody>
                 @foreach ($clientes as $cliente)
                     <tr>
-                        <td class="colunas">{{ $cliente->id }}</td>
-                        <td id="nome">{{ $cliente->nome }}</td>
+                        <td>{{ $cliente->id }}</td>
+                        <td>{{ $cliente->nome }}</td>
                         <td>{{ $cliente->cpf }}</td>
                         <td>{{ $cliente->telefone }}</td>
                         <td>{{ $cliente->sexo }}</td>

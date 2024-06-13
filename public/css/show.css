@@ -1,0 +1,47 @@
+/* styles.css */
+
+/* Estilo para a seção de detalhes do autor */
+.author-details {
+    margin: 20px auto; /* Margem automática para centralização horizontal */
+    padding: 20px;
+    max-width: 600px; /* Largura máxima para evitar que o conteúdo se estenda demais */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilo para as etiquetas de informação do autor */
+.author-meta {
+    margin-bottom: 10px;
+    display: flex; /* Utiliza flexbox para alinhar itens horizontalmente */
+    justify-content: space-between; /* Distribui o espaço entre os elementos */
+}
+
+/* Estilo para a etiqueta de texto */
+.author-label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+    flex: 1; /* Distribui o espaço disponível igualmente entre os elementos */
+}
+
+/* Estilo para a informação do autor */
+.author-info {
+    color: #666;
+    flex: 2; /* Distribui o espaço disponível igualmente entre os elementos */
+}
+
+/* Estilo para o botão de retorno */
+.btn-return {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-return:hover {
+    background-color: #0056b3;
+}

@@ -1,6 +1,6 @@
 <x-app-layout>
     <head>
-        <link rel="stylesheet" href="{{ asset('css/autores/edit.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/edit.css') }}">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Editar Pedidos</title>

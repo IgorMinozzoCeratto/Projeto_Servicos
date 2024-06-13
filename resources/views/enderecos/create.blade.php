@@ -1,9 +1,11 @@
 <x-app-layout>
     <head>
         <title>Novo Endereco</title>
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
     </head>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Cadastrar Endereco') }}
         </h2>
     </x-slot>

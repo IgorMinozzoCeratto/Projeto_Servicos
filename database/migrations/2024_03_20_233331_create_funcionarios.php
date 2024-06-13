@@ -17,8 +17,8 @@ return new class extends Migration
             $table->integer('cpf');
             $table->integer('telefone');
             $table->string('sexo');
-            $table->unsignedBigInteger('endereco_id');
-            $table->unsignedBigInteger('pedido_id');
+            $table->unsignedBigInteger('endereco_id')->nullable();
+            $table->unsignedBigInteger('pedido_id')->nullable();
             $table->timestamps();
 
             $table->foreign('endereco_id')->references('id')->on('enderecos');

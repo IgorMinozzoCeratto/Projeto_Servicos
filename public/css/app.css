@@ -1,12 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Estilos gerais */
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif; /* Fonte padrão */
+    font-family: Arial, sans-serif;
 }
 
 /* Centraliza o conteúdo da página */

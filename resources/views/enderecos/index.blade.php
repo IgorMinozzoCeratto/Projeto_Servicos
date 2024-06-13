@@ -1,16 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}">
+
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Lista Endereco') }}
         </h2>
     </x-slot>
     <div class="container">
-        <form action="{{ route('enderecos.index') }}" method="GET" class="search-form">
-            <div class="search-container">
-                <input type="text" name="search" placeholder="Pesquisar Enderecos..." value="{{ request()->query('search') }}" class="search-input">
-                <button type="submit" class="search-button">Pesquisar</button>
-            </div>
-        </form>
         <a href="{{ route('enderecos.create') }}" class="btn btn-primary">Novo Endereco</a>
         <table class="table">
             <thead>
@@ -26,8 +22,8 @@
             <tbody>
                 @foreach ($enderecos as $endereco)
                     <tr>
-                        <td class="colunas">{{ $endereco->id }}</td>
-                        <td id="nome">{{ $endereco->cidade }}</td>
+                        <td>{{ $endereco->id }}</td>
+                        <td>{{ $endereco->cidade }}</td>
                         <td>{{ $endereco->rua }}</td>
                         <td>{{ $endereco->bairro }}</td>
                         <td>{{ $endereco->estado }}</td>
@@ -45,9 +41,6 @@
                 @endforeach
             </tbody>
         </table>
-        <br>
-        
-        <br>
     </div>
 </x-app-layout>
 

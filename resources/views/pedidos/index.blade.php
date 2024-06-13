@@ -1,16 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-white leading-tight">
+    <link rel="stylesheet" href="{{ asset('css/list.css') }}">
+
+        <h2 class="font-semibold text-xl text-black leading-tight">
             {{ __('Lista Pedidos') }}
         </h2>
     </x-slot>
     <div class="container">
-        <form action="{{ route('pedidos.index') }}" method="GET" class="search-form">
-            <div class="search-container">
-                <input type="text" name="search" placeholder="Pesquisar Pedidos..." value="{{ request()->query('search') }}" class="search-input">
-                <button type="submit" class="search-button">Pesquisar</button>
-            </div>
-        </form>
         <a href="{{ route('pedidos.create') }}" class="btn btn-primary">Novo Pedido</a>
         <table class="table">
             <thead>

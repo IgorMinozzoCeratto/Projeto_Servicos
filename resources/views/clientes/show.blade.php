@@ -4,6 +4,10 @@
             {{ __('Clientes') }}
         </h2>
     </x-slot>
+
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+
+    
     <section class="author-details">
       <div class="author-content">
         <div class="author-meta">

@@ -25,9 +25,9 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        $servicos = Servico::all();
-        $enderecos = Endereco::all();
-        $pedidos = Pedido::all();
+        $servicos = \App\Models\Servico::all();
+        $enderecos = \App\Models\Endereco::all();
+        $pedidos = \App\Models\Pedido::all();
         return view('clientes.create', compact('enderecos', 'pedidos', 'servicos'));
     }
 
