@@ -34,21 +34,21 @@ class FuncionarioController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $funcionario = new Funcionario([
-            'nome' => $request->input('nome'),
-            'cpf' => $request->input('cpf'),
-            'telefone' => $request->input('telefone'),
-            'sexo' => $request->input('sexo'),
-            'endereco_id' => $request->input('enderecos,id'),
-            'servico_id' => $request->input('servico_id')
-        ]);
+{
+    $funcionario = new Funcionario([
+        'nome' => $request->input('nome'),
+        'cpf' => $request->input('cpf'),
+        'telefone' => $request->input('telefone'),
+        'sexo' => $request->input('sexo'),
+        'endereco_id' => $request->input('endereco_id'),
+        'pedido_id' => $request->input('pedido_id')
+    ]);
 
-        $funcionario->save();
+    $funcionario->save();
 
-        return redirect()->route('funcionarios.index');
+    return redirect()->route('funcionarios.index')->with('success', 'Funcionário criado com sucesso!');
+}
 
-    }
 
     /**
      * Display the specified resource.
@@ -77,7 +77,7 @@ class FuncionarioController extends Controller
     {
         $funcionario = Funcionario::findOrFail($id);
         $funcionario->update($request->all());
-        return view('funcionarios.index');
+        return redirect()->route('funcionarios.index');
     }
 
     /**
@@ -87,6 +87,6 @@ class FuncionarioController extends Controller
     {
         $funcionario = Funcionario::findOrFail($id);
         $funcionario->delete();
-        return view('funcionarios.index');
+        return redirect()->route('funcionarios.index');
     }
 }

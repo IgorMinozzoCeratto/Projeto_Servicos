@@ -68,7 +68,7 @@ class EnderecoController extends Controller
         $endereco = Endereco::findOrFail($id);
         $endereco->update($request->all());
         
-        return view('enderecos.index');
+        return redirect()->route('enderecos.index');
     }
 
     /**
@@ -78,6 +78,6 @@ class EnderecoController extends Controller
     {
         $endereco = Endereco::findOrFail($id);
         $endereco->delete();
-        return view('enderecos.index');
+        return redirect()->route('enderecos.index');
     }
 }

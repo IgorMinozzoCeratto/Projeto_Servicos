@@ -30,6 +30,6 @@
           <span class="author-info">{{ $funcionario->sexo }}</span>
         </div>
       </div>
-      <a href="{{ route('funcionario.index') }}" class="btn-return">Voltar</a>
+      <a href="{{ route('funcionarios.index') }}" class="btn-return">Voltar</a>
     </section>
   </x-app-layout>

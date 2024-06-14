@@ -35,20 +35,20 @@ class ClienteController extends Controller
      * Cria uma nova instancia do model com os dados fornecidos no request
      */
     public function store(Request $request)
-    {
-        $cliente = new Cliente([
-            'nome' => $request->input('nome'),
-            'cpf' => $request->input('cpf'),
-            'telefone' => $request->input('telefone'),
-            'sexo' => $request->input('sexo'),
-            'endereco_id' => $request->input('enderecos,id'),
-            'servico_id' => $request->input('servico_id')
-        ]);
+{
+    $cliente = new Cliente([
+        'nome' => $request->input('nome'),
+        'cpf' => $request->input('cpf'),
+        'telefone' => $request->input('telefone'),
+        'sexo' => $request->input('sexo'),
+        'endereco_id' => $request->input('endereco_id'),
+        'pedido_id' => $request->input('pedido_id')
+    ]);
 
-        $cliente->save();
+    $cliente->save();
 
-        return redirect()->route('clientes.index'); 
-    }
+    return redirect()->route('clientes.index')->with('success', 'Cliente criado com sucesso!');
+}
 
     /**
      * Display the specified resource.
@@ -77,7 +77,8 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::findOrFail($id);
         $cliente->update($request->all());
-        return view('clientes.index');
+        return redirect()->route('clientes.index');
+
     }
 
     /**
@@ -87,6 +88,6 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::findOrFail($id);
         $cliente->delete();
-        return view('clientes.index');
+        return redirect()->route('clientes.index');
     }
 }

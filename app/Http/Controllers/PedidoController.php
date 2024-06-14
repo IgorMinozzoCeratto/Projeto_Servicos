@@ -72,7 +72,7 @@ class PedidoController extends Controller
     {
         $pedido = Pedido::findOrFail($id);
         $pedido->update($request->all());
-        return view('pedidos.index');
+        return redirect()->route('pedidos.index');
     }
 
     /**
@@ -82,6 +82,6 @@ class PedidoController extends Controller
     {
         $pedido = Pedido::findOrFail($id);
         $pedido->delete();
-        return view('pedidos.index');
+        return redirect()->route('pedidos.index');
     }
 }

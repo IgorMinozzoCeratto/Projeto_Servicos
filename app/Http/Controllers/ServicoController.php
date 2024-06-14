@@ -64,7 +64,7 @@ class ServicoController extends Controller
     {
         $servico = Servico::findOrFail($id);
         $servico->update($request->all());
-        return view('servicos.index');
+        return redirect()->route('servicos.index');
     }
 
     /**
@@ -74,6 +74,6 @@ class ServicoController extends Controller
     {
         $servico = Servico::findOrFail($id);
         $servico->delete();
-        return view('servicos.index');
+        return redirect()->route('servicos.index');
     }
 }
