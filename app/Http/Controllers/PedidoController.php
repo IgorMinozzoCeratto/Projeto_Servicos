@@ -30,21 +30,21 @@ class PedidoController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+{
+    $pedido = new Pedido([
+        'valor_total' => $request->input('valor_total'),
+        'previsao_entrega' => $request->input('previsao_entrega'),
+        'preco_venda' => $request->input('preco_venda'),
+        'observacao' => $request->input('observacao'),
+        'servicos_id' => $request->input('servicos_id'),
+    ]);
+
+    $pedido->save();
+
+    return redirect()->route('pedidos.index')->with('success', 'Pedido criado com sucesso!');
+}
 
 
-        $pedido = new Pedido([
-            'valor_total' => $request->input('valor_total'),
-            'previsao_entrega' => $request->input('previsao_entrega'),
-            'preco_venda' => $request->input('preco_venda'),
-            'observacao' => $request->input('observacao'),
-            'servico_id' => $request->input('servicos,id'),
-        ]);
-
-        $pedido->save();
-
-        return redirect()->route('pedidos.index'); 
-    }
 
     /**
      * Display the specified resource.
